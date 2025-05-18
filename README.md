@@ -1,89 +1,29 @@
-Hospital Management System - MySQL Database
-Project Title
-Hospital Management System Database.
-A comprehensive relational database for managing hospital operations including patient care, staff management, and medical records.
-Description
-This MySQL database provides a complete backend solution for hospital management with:
+#  COVID-19 Global Data Analysis
 
-  Patient management (registration, demographics, emergency contacts)
+## 📝 Project Description
+A data analysis project that:
+- Tracks COVID-19 cases, deaths, and vaccinations worldwide
+- Compares trends across countries
+- Visualizes key metrics through interactive charts
+- Uses both Python (Pandas/Matplotlib) and SQL for analysis
 
-  Staff management (doctors, nurses with department assignments)
+## 🚀 Setup & Execution
 
-  Appointment scheduling system
+### Python Analysis (Jupyter Notebook)
+1. Install requirements:
+   ```bash
+   pip install -r requirements.txt
 
-  In-patient admission tracking
+    Run the notebook:
+    bash
 
-  Medical records with diagnosis and treatment history
+    jupyter notebook COVID-19.ipynb
 
-  Medication inventory and prescriptions
+SQL Analysis
 
-  Billing and financial tracking
+    Import the SQL file to your database:
+    bash
 
-    Room and bed management
+psql -h [host] -U [user] -d [database] -f covid_analysis.sql
 
-The database enforces referential integrity and business rules through proper constraints, relationships, and validation checks.
-Setup Instructions
-Prerequisites
-
-    MySQL Server (8.0+ recommended)
-
-    MySQL Workbench or other MySQL client
-
-Installation
-
-    Create the database:
-    sql
-
-CREATE DATABASE hospital_management;
-USE hospital_management;
-
-Import the SQL file:
-bash
-
-mysql -u [username] -p hospital_management < hospital_management.sql
-
-Or use MySQL Workbench's Data Import feature
-
-Verify tables:
-sql
-
-    SHOW TABLES;
-
-Alternative Setup
-
-For quick testing, you can:
-
-    Copy the entire SQL script from the repository
-
-    Execute it in your MySQL client
-
-Database Schema (ERD)
-
-Hospital Management System ERD
-ERD.png
-
-Key Features
-
-    17 normalized tables covering all hospital operations
-
-    Proper constraints (PK, FK, CHECK, UNIQUE)
-
-    Sample data for quick testing (optional)
-
-    Stored procedures for common operations
-
-    Views for reporting
-
-Usage Examples
-sql
-
--- Find all active patients
-SELECT * FROM patients WHERE status = 'Active';
-
--- View doctor appointments for today
-SELECT * FROM appointments 
-WHERE DATE(appointment_date) = CURDATE();
-
--- Check room availability
-SELECT * FROM rooms WHERE status = 'Available';
-
+Or run queries directly in your SQL client
